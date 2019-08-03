@@ -16,11 +16,17 @@ export default (state= initViewState, action) => {
     }
 
     case consts.TOGGLE_ITEM_MODAL: {
-      console.log(action.payload)
       return {
         ...state,
         isItemModalOpen: !state.isItemModalOpen,
         payload: action.payload
+      }
+    }
+
+    case consts.OPEN_ITEM_INFO: {
+      return {
+        ...state,
+        id: action.payload
       }
     }
 

@@ -12,3 +12,10 @@ export const toggleItemModal= (payload) => {
     payload
   }
 }
+
+export const openItemInfo = (payload) => {
+  return {
+    type: consts.OPEN_ITEM_INFO,
+    payload
+  }
+}

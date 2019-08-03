@@ -13,7 +13,7 @@ const CatalogueItem = props => {
       <>
         <div className={classNames({ 'catalogues-list-item': listView, 'catalogues-grid-item': !listView })}>
         <div
-          onClick={() => toggleItemModal({name,price,description,img})}
+          onClick={() => toggleItemModal({name,price,description,img, id})}
           className={classNames({ 'catalogues-list-item-inner': listView, 'catalogues-grid-item-inner': !listView })}
         >
           <div className={classNames({'catalogues-image-list': listView, 'catalogues-image-grid': !listView})}>
@@ -42,7 +42,6 @@ const CatalogueItem = props => {
           >Add to basket
           </button>
         </div>
-
       </>
     )
 }

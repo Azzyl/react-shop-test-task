@@ -8,4 +8,5 @@ export default keyMirror({
   RESET_NOTIFICATION_FLAGS: null,
   ADD_NOTIFICATION: null,
   TOGGLE_ITEM_MODAL: null,
+  OPEN_ITEM_INFO: null,
 })

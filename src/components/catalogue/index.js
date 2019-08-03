@@ -10,6 +10,7 @@ import { getGoods } from '../../apiSample'
 import '../../assets/styles/catalogue.scss'
 import classNames from 'classnames'
 import { Reorder, GridOn } from '@material-ui/icons'
+import Modal from '../../common/modal'
 
 const Catalogue = props => {
   const goods = getGoods()
@@ -25,7 +26,10 @@ const Catalogue = props => {
         )}
       </div>
 
+      <Modal/>
+
       <div
+        className='toggle-container'
         onClick={() => props.toggleCompaniesView()}
       >{props.listView ? <GridOn
           className='toggle'

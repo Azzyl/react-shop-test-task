@@ -164,4 +164,9 @@
   cursor: pointer;
   font-size: $fontSize-xl !important;
   color: white;
+  &-container {
+    position: absolute;
+    top: 2.35vw;
+    left: 26vw;
+  }
 }

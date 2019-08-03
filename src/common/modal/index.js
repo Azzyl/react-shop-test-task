@@ -2,7 +2,8 @@ import React from 'react'
 import ReactModal from 'react-modal'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { toggleItemModal } from '../../actions/viewActions'
+import { toggleItemModal, openItemInfo } from '../../actions/viewActions'
+import { push } from 'connected-react-router'
 
 import '../../assets/styles/modal.scss'
 
@@ -19,13 +20,12 @@ const customStyles = {
   }
 }
 
-// ReactModal.setAppElement('#root')
+ReactModal.setAppElement('#root')
 
 const CustomModal = props => {
-// class CustomModal extends React.Component {
-  const { payload, isItemModalOpen, toggleItemModal } = props
-  console.log('----from props', payload)
-  const { name, price, description, img } = payload
+  const { payload, isItemModalOpen, toggleItemModal, openItemInfo, openItemPage } = props
+  if (payload)
+    var { name, price, description, img, id } = payload
 
   return (
     <ReactModal
@@ -48,23 +48,34 @@ const CustomModal = props => {
           {description}
         </span>
       </div>
+      <div className='modal-button-container'>
+        <button onClick={() => {
+          toggleItemModal()
+          openItemInfo(id)
+          openItemPage()
+        }}
+                className='modal-button'
+        >
+          Open item info
+        </button>
+      </div>
     </ReactModal>
   )
 }
 
 export default connect(
   ({ viewReducer }) => {
-    console.log('view', viewReducer)
     return {
       isItemModalOpen: viewReducer.isItemModalOpen,
       payload: viewReducer.payload
     }
   },
-  null,
-  // dispatch =>
-  //   bindActionCreators(
-  //     {
-  //       toggleItemModal
-  //     },
-  //     dispatch)
+  dispatch =>
+    bindActionCreators(
+      {
+        openItemInfo,
+        toggleItemModal,
+        openItemPage: () => push('/item/')
+      },
+      dispatch)
 )(CustomModal)

@@ -12,8 +12,8 @@ export default (state = initBasketState, action) => {
     case consts.BASKET_ADD_ITEM: {
       return {
         ...state,
-        itemAdded: !state.basket[action.payload.id],
-        goodName: !state.basket[action.payload.id] && action.payload.name,
+        itemAdded: true,
+        goodName: action.payload.name,
         itemRemoved: false,
         basket: {
           ...state.basket,
