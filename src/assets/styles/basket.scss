@@ -1,0 +1,86 @@
+@import "./index";
+
+.basket {
+  width: 70vw;
+  background-color: $mainColor;
+  box-sizing: border-box;
+
+  padding: 2vw 5vw 7vw;
+  border-radius: 0.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+    &-name {
+      font-size: $fontSize-l;
+    }
+    &-total {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5vw;
+      &-label {
+        opacity: 0.5;
+        font-size: $fontSize-m;
+      }
+      &-value {
+        font-size: $fontSize-l;
+      }
+    }
+  }
+
+  &-item {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8vw 0;
+    width: 90%;
+    &-info {
+      display: flex;
+      flex-direction: column;
+      width: 30vw;
+
+      &-label {
+        opacity: 0.5;
+        font-size: $fontSize-m;
+      }
+      &-value {
+        margin-left: 0.7vw;
+        font-size: $fontSize-l;
+      }
+    }
+
+    &-control {
+      display: flex;
+      flex-direction: row;
+      &-amount {
+        width: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &-value {
+          font-size: $fontSize-l;
+        }
+      }
+      &-delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &-icon {
+        font-size: $fontSize-l !important;
+        color: $fontColor;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

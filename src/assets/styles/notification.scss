@@ -1,0 +1,35 @@
+@import "index";
+
+.notification {
+  position: absolute;
+  width: 20vw;
+  height: 5vw;
+
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100;
+
+  text-align: center;
+  &-added {
+    background-color: greenyellow;
+  }
+
+  &-removed {
+    background-color: red;
+  }
+
+  &-text {
+    font-size: $fontSize-l;
+    &-added {
+      color: black;
+    }
+    &-removed {
+      color: white;
+    }
+  }
+}

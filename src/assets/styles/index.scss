@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+$backgroundColor: #46494C;
+$mainColor: white;
+$activeColor: #10A5E8;
+$fontColor: #343434;
+
+$fontSize-m: 1vw;
+$fontSize-l: 2vw;
+$fontSize-xl: 2.5vw;
+$fontSize-xxl: 3,5vw;
+
+$transitionTime: 250ms;
+
+header {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: $backgroundColor;
+  height: 7vw;
+  width: 100vw;
+  color: white;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .link {
+    color: white;
+    font-size: $fontSize-xl;
+    border: none !important;
+    transition: color $transitionTime ease-in-out;
+    &:hover {
+      color: darken(white, 15%);
+    }
+  }
+
+  .icon {
+    color: white;
+    font-size: $fontSize-xl !important;
+    transition: color $transitionTime ease-in-out;
+    &:hover {
+      color: darken(white, 15%);
+    }
+  }
+
+  .active {
+    color: $activeColor
+  }
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  background-color: $backgroundColor;
+  font-size: $fontSize-m;
+  color: $fontColor;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+
+}
